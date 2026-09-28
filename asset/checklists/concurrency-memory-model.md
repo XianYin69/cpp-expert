@@ -1,0 +1,12 @@
+# 评审清单 · concurrency-memory-model
+- [ ] blocking | 存在无同步的并发读写（数据竞争 = UB） | [std]
+- [ ] blocking | 用 volatile 代替 atomic / 用 sleep 代替同步 | [std]
+- [ ] blocking | std::thread 未 join/detach 即析构 -> terminate | [cppref]
+- [ ] blocking | 加锁顺序不一致或持锁回调（锁重入/自死锁） | [cse R.2]
+- [ ] major | 手写 lock/unlock 配对（异常路径漏解锁）应改 scoped_lock | [cse C.37]
+- [ ] major | condition_variable::wait 无谓词（虚假唤醒） | [cppref]
+- [ ] major | relaxed 内存序无书面理由；跨字段不变量未用原子保护 | [std]
+- [ ] major | 同一 shared_ptr 实例多线程读写未加锁 | [cppref]
+- [ ] major | 把 this/引用交给线程而对象可能先析构 | [cse F.21]
+- [ ] minor | 改用 jthread/stop_token、原子队列替代手写轮询 | [book]
+- [ ] verify | python -B scripts/concurrency_probe.py <file> + TSan 实测
