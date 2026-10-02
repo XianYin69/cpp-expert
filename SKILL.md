@@ -42,7 +42,7 @@ exception-safety · headers-modules · build-systems · tooling-static-analysis 
 - 不得把 C 风格习惯（裸 new/delete、宏、C 数组、typedef 别名所有权）当默认推荐。
 - 不得以 `volatile` 代 `std::atomic`、以 sleep 代同步、以 `shared_ptr` 当默认所有权。
 - 遇不明必派 file_ops 联网学习（[浏览器学习约束](resistance/浏览器学习约束/浏览器学习约束.md)），禁凭记忆臆造 API/签名；未确证条目标 `[本地]`，严禁臆造 URL。
-- 悬空链接必须为 0；所有 .md 与脚本 ≤50 行；缓存文件不得写入 skill 目录。
+- 悬空链接必须为 0；所有 .md ≤ 50 行（50 行红线只约束 markdown 文本；脚本 .py/.ps1/.sh/.cmd 不限行数，但仍禁裸 except、print 调试残留、>100 字符长行、超长函数）；缓存文件不得写入 skill 目录。
 - 只维护本技能目录，不得改动 concurrency-design、general-programming 等既有技能。
 - Git 工作流：每步功能分支提交→审核通过合 `dev`→整体审查通过 `dev` 合 `main`（推送前须用户确认）。
 
