@@ -1,5 +1,6 @@
 ---
 name: cpp-expert
+version: 0.1.0
 description: >
   现代 C++（C++11/14/17/20/23）专家顾问：RAII 与所有权建模、Rule of 0/3/5、const 与移动语义、
   模板与概念、STL 容器与算法选型、并发与内存模型、异常安全、编译防火墙、CMake/包管理、
